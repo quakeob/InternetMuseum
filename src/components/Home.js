@@ -1,28 +1,36 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 import Exhibit from './Exhibit';
-import { exhibits } from '../data/exhibitData';
+import { artifacts } from '../data/exhibitData';
 
 const Home = () => {
+  // Get featured items for exhibits (first 3 items)
+  const featuredArtifacts = artifacts.slice(0, 3);
+  
   return (
     <div className="home">
-      <div className="side-nav">
-        <h2>Internet Museum</h2>
+      <aside className="side-nav">
+        <h2>Navigation</h2>
         <nav>
           <ul>
-            <li><a href="#exhibits">Current Exhibits</a></li>
-            <li><a href="#collections">Collections</a></li>
-            <li><a href="#timeline">Internet Timeline</a></li>
-            <li><a href="#contribute">Contribute</a></li>
-            <li><a href="#about">About</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/#exhibits">Exhibits</Link></li>
+            <li><Link to="/#archive">Archive</Link></li>
+            <li><Link to="/timeline">Internet Timeline</Link></li>
+            <li><Link to="/collections">Collections</Link></li>
+            <li><Link to="/artifacts">Digital Artifacts</Link></li>
+            <li><Link to="/contribute">Contribute</Link></li>
+            <li><Link to="/about">About Museum</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </nav>
-      </div>
+      </aside>
       
-      <div className="main-content">
-        <section className="welcome">
-          <h1>Welcome to the Internet Museum</h1>
-          <p className="subtitle">Preserving digital culture, one artifact at a time.</p>
+      <main className="main-content">
+        <section id="welcome" className="welcome">
+          <h1>Internet Museum</h1>
+          <p className="subtitle">Preserving digital culture, one artifact at a time</p>
           
           <div className="quote-block">
             <blockquote>
@@ -33,12 +41,25 @@ const Home = () => {
         </section>
 
         <section id="exhibits" className="exhibits-section">
-          <h2>Featured Exhibits</h2>
-          {exhibits.map(exhibit => (
-            <Exhibit key={exhibit.id} artifact={exhibit} />
-          ))}
+          <h2>Current Exhibits</h2>
+          <p className="section-description">Curated presentations of significant internet artifacts and their cultural impact.</p>
+          <div className="featured-grid">
+            {featuredArtifacts.map(artifact => (
+              <Exhibit key={artifact.id} artifact={artifact} featured={true} />
+            ))}
+          </div>
         </section>
-      </div>
+
+        <section id="archive" className="archive-section">
+          <h2>Complete Archive</h2>
+          <p className="section-description">Browse our comprehensive collection of internet history artifacts.</p>
+          <div className="archive-grid">
+            {artifacts.map(artifact => (
+              <Exhibit key={artifact.id} artifact={artifact} featured={false} />
+            ))}
+          </div>
+        </section>
+      </main>
     </div>
   );
 };

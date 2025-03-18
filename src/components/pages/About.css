@@ -1,0 +1,84 @@
+.about-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.about-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: monospace;
+}
+
+.page-description {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.about-content section {
+  background: #fbf9f3;
+  padding: 2rem;
+}
+
+.about-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #111;
+}
+
+.about-content p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.team-grid,
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team-member,
+.value-item {
+  padding: 1.5rem;
+  background: #fff;
+}
+
+.team-member h3,
+.value-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+.team-member p,
+.value-item p {
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .about-content section {
+    padding: 1.5rem;
+  }
+  
+  .team-grid,
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+} 

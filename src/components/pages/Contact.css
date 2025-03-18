@@ -1,0 +1,152 @@
+.contact-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.contact-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: monospace;
+}
+
+.page-description {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-section {
+  background: #fbf9f3;
+  padding: 2rem;
+}
+
+.info-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+.info-section p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.address {
+  margin-top: 1.5rem;
+}
+
+.address p {
+  margin: 0.5rem 0;
+  color: #111;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-link {
+  color: #111;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid #111;
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  background: #111;
+  color: #fbf9f3;
+}
+
+.contact-form {
+  background: #fbf9f3;
+  padding: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #111;
+  font-family: monospace;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #111;
+  background: #fff;
+  font-family: monospace;
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23111' d='M6 8.825L1.175 4 2.238 2.938 6 6.7l3.763-3.763L10.825 4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.submit-button {
+  background: #111;
+  color: #fbf9f3;
+  border: none;
+  padding: 1rem 2rem;
+  font-family: monospace;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  width: 100%;
+}
+
+.submit-button:hover {
+  background: #333;
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .info-section,
+  .contact-form {
+    padding: 1.5rem;
+  }
+  
+  .social-links {
+    flex-wrap: wrap;
+  }
+} 

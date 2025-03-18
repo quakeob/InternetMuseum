@@ -1,0 +1,90 @@
+.digital-artifacts-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.digital-artifacts-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: monospace;
+}
+
+.page-description {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.artifact-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.artifact-category {
+  background: #fbf9f3;
+  padding: 2rem;
+}
+
+.artifact-category h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+.category-description {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.artifact-examples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.artifact-example {
+  padding: 1.5rem;
+  background: #fff;
+}
+
+.artifact-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.artifact-header h3 {
+  font-size: 1.2rem;
+  color: #111;
+  margin: 0;
+}
+
+.year {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.artifact-example p {
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .artifact-category {
+    padding: 1rem;
+  }
+  
+  .artifact-examples {
+    grid-template-columns: 1fr;
+  }
+} 

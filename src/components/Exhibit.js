@@ -1,31 +1,28 @@
 import React from 'react';
 import './Exhibit.css';
 
-const Exhibit = ({ artifact }) => {
+const Exhibit = ({ artifact, featured }) => {
   return (
-    <div className="exhibit">
-      <div className="exhibit-content">
-        <img 
-          src={artifact.imageUrl} 
-          alt={artifact.title} 
-          className="exhibit-image"
-        />
-        <div className="exhibit-info">
-          <h2>{artifact.title}</h2>
-          <p className="exhibit-date">{artifact.date}</p>
-          <p className="exhibit-description">{artifact.description}</p>
-          <div className="exhibit-context">
-            <h3>Historical Context</h3>
-            <p>{artifact.context}</p>
-          </div>
-          <div className="exhibit-tags">
-            {artifact.tags.map((tag, index) => (
-              <span key={index} className="tag">#{tag}</span>
+    <article className={`exhibit ${featured ? 'featured' : ''}`}>
+      <img src={artifact.imageUrl} alt={artifact.title} />
+      <h3>{artifact.title}</h3>
+      <div className="metadata">
+        <span className="date">{artifact.date}</span>
+      </div>
+      {featured ? (
+        <>
+          <p className="description">{artifact.description}</p>
+          <p className="context">{artifact.context}</p>
+          <div className="tags">
+            {artifact.tags.map(tag => (
+              <span key={tag} className="tag">{tag}</span>
             ))}
           </div>
-        </div>
-      </div>
-    </div>
+        </>
+      ) : (
+        <p className="description">{artifact.description}</p>
+      )}
+    </article>
   );
 };
 
