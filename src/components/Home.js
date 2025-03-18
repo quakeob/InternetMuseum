@@ -1,90 +1,88 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
-function Home() {
-  const [isNavCollapsed, setIsNavCollapsed] = useState(false);
-
-  const toggleNav = () => {
-    setIsNavCollapsed(!isNavCollapsed);
-  };
-
+const Home = () => {
   return (
     <div className="home">
-      <nav className={`side-nav ${isNavCollapsed ? 'collapsed' : ''}`}>
-        <button 
-          className="toggle-nav"
-          onClick={toggleNav}
-          aria-label={isNavCollapsed ? "Expand navigation" : "Collapse navigation"}
-        >
-          {isNavCollapsed ? "→" : "←"}
-        </button>
-        <ul>
-          <li><a href="#archive">Archive</a></li>
-          <li><a href="#collections">Collections</a></li>
-          <li><a href="#featured">Featured Works</a></li>
-          <li><a href="#recent">Recent Additions</a></li>
-          <li><a href="#contribute">Contribute</a></li>
-          <li><a href="#guidelines">Guidelines</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
+      <div className="side-nav">
+        <nav>
+          <ul>
+            <li><Link to="/exhibits">Exhibits</Link></li>
+            <li><Link to="/collections">Collections</Link></li>
+            <li><Link to="/timeline">Timeline</Link></li>
+            <li><Link to="/contributions">Contributions</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+          </ul>
+        </nav>
+      </div>
       <div className="main-content">
-        <h1 className="page-title">About The Archive</h1>
-        
+        <h1 className="page-title">Internet Museum</h1>
         <div className="metadata">
-          <span className="date">2024-03-21</span>
-          <span className="status">ongoing</span>
-          <span className="certainty">high confidence</span>
+          <p>Est. 2024</p>
+          <p>Preserving Digital History</p>
         </div>
-
+        
         <div className="quote-block">
           <blockquote>
-            "Photography is the story I fail to put into words."
-            <footer>— Destin Sparks</footer>
+            "The Internet is not just one thing, it's a collection of things – of numerous communications networks that all speak the same digital language."
           </blockquote>
+          <p className="quote-author">- Charles R. Smith</p>
         </div>
 
-        <section id="archive">
-          <h2>Archive</h2>
-          <section id="collections">
-            <h3>Collections</h3>
-            <p>Our carefully curated collections showcase various themes and styles, from contemporary photography to historical archives.</p>
-          </section>
-
-          <section id="featured">
-            <h3>Featured Works</h3>
-            <p>Selected pieces that exemplify exceptional quality, unique perspectives, or historical significance.</p>
-          </section>
-
-          <section id="recent">
-            <h3>Recent Additions</h3>
-            <p>Latest contributions to our growing collection, updated regularly to showcase new perspectives.</p>
-          </section>
+        <section className="welcome-section">
+          <h2>Welcome to the Internet Museum</h2>
+          <p>
+            Step into a digital time capsule that chronicles the evolution of the internet, 
+            from its humble beginnings to its current role as the backbone of modern society. 
+            Explore interactive exhibits, discover rare digital artifacts, and learn about the 
+            pioneers who shaped the digital world we know today.
+          </p>
         </section>
 
-        <section id="contribute">
-          <h2>Contribute</h2>
-          <section id="guidelines">
-            <h3>Submission Guidelines</h3>
-            <p>We welcome contributions that align with our purpose. All submissions are reviewed for quality and relevance.</p>
-          </section>
-
-          <section id="contact">
-            <h3>Contact</h3>
-            <p>For inquiries about submissions or collaboration, please reach out through our contact form.</p>
-          </section>
+        <section className="featured-exhibits">
+          <h2>Featured Exhibits</h2>
+          <div className="exhibit-grid">
+            <div className="exhibit-item">
+              <h3>The Birth of the Web</h3>
+              <p>Explore the origins of the World Wide Web and its creator, Tim Berners-Lee.</p>
+            </div>
+            <div className="exhibit-item">
+              <h3>Social Media Evolution</h3>
+              <p>Trace the development of social networking from early bulletin boards to modern platforms.</p>
+            </div>
+            <div className="exhibit-item">
+              <h3>Digital Artifacts</h3>
+              <p>View rare and significant digital artifacts from internet history.</p>
+            </div>
+          </div>
         </section>
 
-        <div className="footer-links">
-          <Link to="/archive">Browse Archive</Link>
-          <span className="separator">•</span>
-          <Link to="/upload">Submit Work</Link>
-        </div>
+        <section className="contribute-section">
+          <h2>Contribute to History</h2>
+          <p>
+            The Internet Museum is a living archive that grows with community contributions. 
+            Share your stories, artifacts, and memories of the internet's evolution.
+          </p>
+          <Link to="/contribute" className="contribute-button">Contribute</Link>
+        </section>
+
+        <section className="contact-section">
+          <h2>Get in Touch</h2>
+          <p>
+            Have questions about our exhibits? Want to contribute? We'd love to hear from you.
+          </p>
+          <Link to="/contact" className="contact-button">Contact Us</Link>
+        </section>
+
+        <footer className="footer-links">
+          <Link to="/exhibits">Browse Exhibits</Link>
+          <Link to="/contribute">Contribute</Link>
+        </footer>
       </div>
     </div>
   );
-}
+};
 
 export default Home; 

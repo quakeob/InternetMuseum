@@ -1,21 +1,22 @@
-# Photo Archive
+# Internet Museum
 
-A minimalist, brutalist photo archive application built with React and Express.
+A digital museum dedicated to preserving and showcasing significant moments, artifacts, and experiences from the history of the internet. This project aims to create an interactive space where users can explore and learn about the evolution of the internet and its impact on society.
 
 ## Features
 
-- Clean, brutalist design inspired by gwern.net
-- User authentication
-- Photo upload and management
-- Responsive layout with collapsible navigation
-- Upvoting/downvoting system for photos
+- Interactive exhibits showcasing key moments in internet history
+- Curated collections of digital artifacts
+- User contributions and community engagement
+- Educational resources and historical context
+- Responsive design for all devices
+- User authentication for contributors
 
 ## Tech Stack
 
-- Frontend: React, React Router
+- Frontend: React.js
 - Backend: Express.js
 - Authentication: JWT
-- Styling: CSS3 with brutalist design principles
+- Styling: CSS3
 
 ## Getting Started
 
@@ -28,41 +29,57 @@ A minimalist, brutalist photo archive application built with React and Express.
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/photo-archive.git
-cd photo-archive
+git clone https://github.com/quakeob/InternetMuseum.git
+cd InternetMuseum
 ```
 
-2. Install frontend dependencies:
+2. Install dependencies:
 ```bash
+# Install frontend dependencies
+cd frontend
+npm install
+
+# Install backend dependencies
+cd ../backend
 npm install
 ```
 
-3. Install backend dependencies:
-```bash
-cd backend
-npm install
+3. Set up environment variables:
+Create a `.env` file in the backend directory with:
+```
+PORT=5000
+JWT_SECRET=your_jwt_secret
 ```
 
-4. Start the backend server:
+4. Start the development servers:
 ```bash
+# Start backend server
 cd backend
 npm run dev
-```
 
-5. Start the frontend development server:
-```bash
+# Start frontend server (in a new terminal)
+cd frontend
 npm start
 ```
 
-The application will be available at http://localhost:3000
+The application will be available at `http://localhost:3000`
 
 ## Project Structure
 
 ```
-photo-archive/
-├── src/                # Frontend source code
-├── public/            # Static files
-├── backend/           # Backend server code
+internet-museum/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── data/
+│   │   └── styles/
+│   └── public/
+├── backend/
+│   ├── server/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   └── middleware/
+│   └── config/
 └── README.md
 ```
 
@@ -76,4 +93,4 @@ photo-archive/
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
