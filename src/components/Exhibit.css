@@ -1,0 +1,69 @@
+.exhibit {
+  padding: 2rem;
+  margin: 2rem 0;
+  background-color: #fbf9f3;
+  border: 1px solid #111;
+}
+
+.exhibit-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.exhibit-image {
+  max-width: 600px;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid #111;
+}
+
+.exhibit-info {
+  flex: 1;
+}
+
+.exhibit-info h2 {
+  font-size: 1.8rem;
+  margin: 0 0 1rem 0;
+  font-family: monospace;
+}
+
+.exhibit-date {
+  font-family: monospace;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.exhibit-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.exhibit-context {
+  margin: 2rem 0;
+  padding: 1rem;
+  border: 1px solid #111;
+  background-color: #fff;
+}
+
+.exhibit-context h3 {
+  font-family: monospace;
+  margin: 0 0 1rem 0;
+}
+
+.exhibit-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tag {
+  background-color: #111;
+  color: #fbf9f3;
+  padding: 0.3rem 0.8rem;
+  border-radius: 2px;
+  font-family: monospace;
+  font-size: 0.9rem;
+} 
